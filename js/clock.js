@@ -20,7 +20,7 @@ interval: 매번 일어나야하는 무언가
 
 
  //현재시간 시계만들기 => 매순간 new date object를 만들고 있다..!
-const clock=document.querySelector("#clock");
+const clock=document.querySelector(".header_clock");
 
 function getClock(){
     const date = new Date();

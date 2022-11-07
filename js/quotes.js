@@ -44,8 +44,8 @@ const quotes = [
     }
 ]; // array안의 object들이라 이렇게 표기한다
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+const quote = document.querySelector(".quote div:first-child");
+const author = document.querySelector(".quote div:last-child");
 
 /*
 console.log(quotes[10-1]);

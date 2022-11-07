@@ -38,6 +38,19 @@ function saveToDos(){
 
     }
 
+    function checkToDo(TODOS_KEY){  // 체크박스를 클릭한 경우 글씨 색을 연하게 바꿔준다.
+        const chk = TODOS_KEY.target.parentElement;
+        if(chk.target.checked){
+            chk.style.color = "#dddddd";
+        }else {
+            chk.style.color = "#000000";
+        }
+    }
+    
+    todoInput.addEventListener("submit",checkToDo);
+
+
+
 
     /*2.list에 값 저장하기
      문제점..! 새로고침하면 list가 reset된다.
@@ -45,7 +58,7 @@ function saveToDos(){
     */
     function paintTodo(newTodo){
         // console.log("I will paint",newTodo);
-        const li = document.createElement("li");
+        let li = document.createElement("li");
         //5-8.각각의 li를 구별하기위해 id를 사용한것
         li.id = newTodo.id;
         const span = document.createElement("span");
@@ -55,6 +68,7 @@ function saveToDos(){
         button.innerText= "❌";
         button.addEventListener("click",DeleteTodo);
         li.appendChild(span);
+        // span.innerHTML = `<ul id="todo-list"><input type="checkbox"><label>${value}</label>`;
         li.appendChild(button);
         todoList.appendChild(li);
         
