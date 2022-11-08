@@ -1,17 +1,23 @@
-body{
-    position: relative;
-    
-    
-}
-.clock{
+.header{
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 70px;
-    justify-content: center;
-    font-size: x-large;
-    font-weight: 550;
+    flex-direction: row;
+    justify-items:baseline;
 }
-
+.header_weather{
+    display: flex;
+    font-size: x-large;
+    font-weight: 600;
+    justify-items: flex-start;
+   
+}
+.header_clock{
+    display: flex;
+    font-size: x-large;
+    font-weight: 600;
+    justify-items: center;
+    margin-left: 550px;
+   
+}
 
 .hidden{
     display: block;
@@ -19,23 +25,55 @@ body{
 
 .quote{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     font-size: medium;
+    margin-top: 70px;
     
 }
 .quote :last-child{
     margin-top: 20px;
 }
 
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 50px 100px;
+}
+#target{
+    width: 40px;
+    height: 450px;
+    width: 450px;
+}
+
+.view{
+    justify-items:auto ;
+    width: 30px;
+    height: 60px;
+    padding: 10px;
+}
+
+
 .todo-form_class{
     border: 2px solid black;
-    position: absolute;
     display: flex;
+    justify-items:auto;
+    width: 450px;
+    height: 450px;
+    padding: 30px;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    padding-left: 680px;
-    
 }
+.todo-form_listName{
+        align-items: center;
+        margin-bottom: 30px;
+}
+
+
+
+#button{
+    margin: 5px;
+    background-color: blue;
+}
+

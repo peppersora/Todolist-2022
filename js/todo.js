@@ -129,7 +129,8 @@ function saveToDos(){
     function deleteAll(){
 
         removeallchild(ul);
-         
+       
+  
     }
     all.addEventListener("click",deleteAll);
 

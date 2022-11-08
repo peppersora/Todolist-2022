@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="backgroundImg">
+  <div class="header">
     <div id="header_weather">
       <span></span>
       <span></span>
@@ -20,37 +20,39 @@
       <h2 class="header_clock">
         00:00:00
       </h2>
-
-      <div class="quote">
-        <div class="quote_text"></div>
-        <div class="quote_person"></div>
       </div>
     </div>
-    <div class="Putimg">
-
-    </div>
+      <div class="quote">
+        <div class="quote_text"></div>
+        <div class="quote_person"></br></div>
+      </div>
+      <div class="footer">
+    <div class="view">
+      <img src="" id="target"/>
+  </div>
     <div class="todo-form_class">
-      <h2>TodoList</h2>
+      <h2 class="todo-form_listName">TodoList</h2>
       <form id="todo-form">
         <input type="text" placeholder="Write a To Do and Press Enter" required />
         <button type="submit"><b>Plus</b></button>
         <ul id="todo-list"> 
-          <li>
+          <li class="list">
            <span></span>
-           
+           <span id="button"></span>
           </li>
         </ul>
         <input type="reset"/>
         <button class="deleteAll"><b>DeleteAll</b></button>
       </form>
+    </div>
       </div>
     <script src="../js/clock.js"></script>
     <!-- <script src="../js/apps.js"></script> -->
     <script src="../js/quotes.js"></script>
-    <!-- <script src="../js/background.js"></script>  -->
+    <script src="../js/background.js"></script> 
     <script src="../js/todo.js"></script>
     <script src="../js/weather.js"></script>
-  </div>
+  
 </body>
 
 </html>
