@@ -14,6 +14,7 @@ let todos =[];
 // 4-2. localstrage에 저장
 function saveToDos(){
     localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
+   
 }
 
     //3. button을 click 후 삭제
@@ -21,7 +22,7 @@ function saveToDos(){
         // console.log("lalal");
         // 여기서 문제점은 클릭했을때 어떤것을 클릭했는지 알수 없음
         // console.log(event);
-        const li = event.target.parentElement;
+        let li = event.target.parentElement;
         // console.log(li);
         // console.log(li.id);
         li.remove();
@@ -37,18 +38,6 @@ function saveToDos(){
             */
 
     }
-
-    function checkToDo(TODOS_KEY){  // 체크박스를 클릭한 경우 글씨 색을 연하게 바꿔준다.
-        const chk = TODOS_KEY.target.parentElement;
-        if(chk.target.checked){
-            chk.style.color = "#dddddd";
-        }else {
-            chk.style.color = "#000000";
-        }
-    }
-    
-    todoInput.addEventListener("submit",checkToDo);
-
 
 
 
@@ -67,8 +56,8 @@ function saveToDos(){
         const button = document.createElement("button");
         button.innerText= "❌";
         button.addEventListener("click",DeleteTodo);
+        
         li.appendChild(span);
-        // span.innerHTML = `<ul id="todo-list"><input type="checkbox"><label>${value}</label>`;
         li.appendChild(button);
         todoList.appendChild(li);
         
@@ -81,7 +70,7 @@ function saveToDos(){
         const newTodo = todoInput.value;
         todoInput.value="";
         // 5-5. newTodo 배열에 obj(객체로) text를 추가
-        const newTodoObj = {
+        let newTodoObj = {
             text: newTodo,
             id: Date.now(),
 
@@ -93,7 +82,7 @@ function saveToDos(){
        
     }
     todoForm.addEventListener("submit",handleToDoSubmit);
-    const savedToDos = localStorage.getItem(TODOS_KEY);
+    let savedToDos = localStorage.getItem(TODOS_KEY);
 
 
     /* 5-1. 방법1 
@@ -131,3 +120,22 @@ function saveToDos(){
     function sexyFilter(food){ return food !== "banana"}
     arr.filter(sexyFilter);
     */
+
+    const all = document.querySelector(".deleteAll");
+    const ul = document.querySelector("#todo-list");
+    
+    let li = todos;
+  
+    function deleteAll(){
+
+        removeallchild(ul);
+         
+    }
+    all.addEventListener("click",deleteAll);
+
+    function removeallchild(li){
+        while (li.hasChildNodes()) {
+            li.removeChild(li.firstChild);
+        }
+    }
+  
