@@ -1,3 +1,7 @@
+
+
+
+
 .header{
     display: flex;
     flex-direction: row;
@@ -10,18 +14,46 @@
     justify-items: flex-start;
    
 }
+.header_title{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
 .header_clock{
     display: flex;
     font-size: x-large;
     font-weight: 600;
-    justify-items: center;
+    /* justify-items: center; */
     margin-left: 550px;
    
 }
 
-.hidden{
-    display: block;
+.search{
+    display: flex;
+  
 }
+
+
+.search input{
+   border-bottom: 2px solid black;
+  border-top:  none;
+  border-left: none;
+  border-right: none;
+    justify-items:center;
+    align-self: flex-end;
+    margin-left: 550px;
+    margin-top: 40px;
+}
+
+
+.playmusic:hover{
+    color:blue;
+    
+}
+
+
+
 
 .quote{
     display: flex;
@@ -38,42 +70,67 @@
 .footer{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-around;
     margin: 50px 100px;
 }
+
 #target{
-    width: 40px;
+  
     height: 450px;
     width: 450px;
+    border-radius: none;
 }
 
-.view{
-    justify-items:auto ;
-    width: 30px;
-    height: 60px;
-    padding: 10px;
-}
+
 
 
 .todo-form_class{
+    position: relative;
     border: 2px solid black;
     display: flex;
-    justify-items:auto;
-    width: 450px;
-    height: 450px;
-    padding: 30px;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
+    width: 450px;
+    height: 450px;
+    
+    
+   
+    
 }
+
+.todo-form_headername{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
 .todo-form_listName{
-        align-items: center;
+        
         margin-bottom: 30px;
 }
 
 
+.todo-form_footer{
+   
+    align-items: center;
+    justify-self: center;
+    margin-top: 35px;
+    
 
-#button{
-    margin: 5px;
-    background-color: blue;
 }
 
+.inputBtn{
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.deleteAll{
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}

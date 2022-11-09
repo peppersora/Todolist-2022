@@ -50,16 +50,25 @@ function saveToDos(){
         let li = document.createElement("li");
         //5-8.각각의 li를 구별하기위해 id를 사용한것
         li.id = newTodo.id;
-        const span = document.createElement("span");
+        let span = document.createElement("span");
         // 5-6.앞에서 한 span.innerText=newTodo; 를 변경해야 한다.
         span.innerText = newTodo.text;
-        const button = document.createElement("button");
+        let button = document.createElement("button");
         button.innerText= "❌";
+        
         button.addEventListener("click",DeleteTodo);
         
         li.appendChild(span);
-        li.appendChild(button);
+        // li.appendChild(button);
+        li.prepend(button);
         todoList.appendChild(li);
+        
+        span.style.cssText="margin:5px";
+
+        button.style.setProperty ("background-color", "green");
+        
+        button.style.cssText="margin:3px";
+        
         
     }
 

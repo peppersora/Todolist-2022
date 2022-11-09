@@ -16,43 +16,60 @@
       <span></span>
       <span></span>
     </div>
+    <audio id="audio">
+      <source id="audioSource" src="C:\Users\user\Documents\GitHub\Todolist-2022\html\[Playlist] 내가 사랑한 요시마타 료의 음악.mp3"type='audio/mp3'/>   
+    </audio>
+    <button onclick="musicPlay()">MUSIC</button>
     <div class="header_title">
       <h2 class="header_clock">
         00:00:00
       </h2>
-      </div>
+      <div class="search">
+      <input type="text" 
+        
+      placeholder="search"/>
     </div>
-      <div class="quote">
-        <div class="quote_text"></div>
-        <div class="quote_person"></br></div>
-      </div>
-      <div class="footer">
-    <div class="view">
-      <img src="" id="target"/>
+    </div>
   </div>
-    <div class="todo-form_class">
-      <h2 class="todo-form_listName">TodoList</h2>
-      <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required />
-        <button type="submit"><b>Plus</b></button>
-        <ul id="todo-list"> 
-          <li class="list">
-           <span></span>
-           <span id="button"></span>
-          </li>
-        </ul>
-        <input type="reset"/>
-        <button class="deleteAll"><b>DeleteAll</b></button>
-      </form>
+  <div class="quote">
+    <div class="quote_text"></div>
+    <div class="quote_person"></br></div>
+  </div>
+  <div class="footer">
+    <div class="view">
+      <img src="" id="target" />
     </div>
-      </div>
-    <script src="../js/clock.js"></script>
-    <!-- <script src="../js/apps.js"></script> -->
-    <script src="../js/quotes.js"></script>
-    <script src="../js/background.js"></script> 
-    <script src="../js/todo.js"></script>
-    <script src="../js/weather.js"></script>
-  
+    <div class="todo-form_class">
+      <div class="todo-form_headername">
+      <h2 class="todo-form_listName">
+        TodoList
+      </h2>
+    </div>
+    <form id="todo-form">
+      <input type="text" placeholder="Write a To Do and Press Enter" required />
+      <button type="submit"><b>Plus</b></button>
+      <ul id="todo-list">
+        <li class="list">
+          
+          <span id="button"></span>
+        </li>
+      </ul>
+    </form>
+    <div class="todo-form_footer">
+      <input class="inputBtn" type="reset" />
+      <i class="fa-regular fa-square-xmark"></i>
+      <button class="deleteAll"><b>DeleteAll</b></button>
+    </div>
+  </div>
+</div>
+
+  <script src="../js/clock.js"></script>
+  <!-- <script src="../js/apps.js"></script> -->
+  <script src="../js/quotes.js"></script>
+  <script src="../js/background.js"></script>
+  <script src="../js/todo.js"></script>
+  <script src="../js/weather.js"></script>
+
 </body>
 
 </html>

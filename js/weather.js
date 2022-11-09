@@ -27,3 +27,27 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 
 /*2. lat,lng를 이용해 알게 된 좌표(숫자)를 장소로 바꿔줄 서비스를 사용해야 한다.
     기본적으로 api는 다른 서버와 이야기 할 수 있는 방법*/
+
+
+// bgm 넣기
+
+let audio = document.querySelector("#audio");
+
+function musicPlay(){
+    
+    audio.loop=true;
+    audio.play();
+
+
+
+}
+
+
+
+audio.addEventListener("click",musicPlay);
+audio.addEventListener("doubleclick",pause);
+
+
+function pause(){
+    console.log("paused");
+}
