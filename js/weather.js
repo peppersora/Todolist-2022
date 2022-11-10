@@ -32,22 +32,35 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 // bgm 넣기
 
 let audio = document.querySelector("#audio");
-
+let button = document.querySelector("#click");
 function musicPlay(){
-    
+    console.log("Clicked");
+    // Element.style.color="red";
     audio.loop=true;
     audio.play();
 
-
-
 }
 
+button.addEventListener("click",musicPlay);
+button.addEventListener("dblclick",musicPause);
 
+function musicPause(){
 
-audio.addEventListener("click",musicPlay);
-audio.addEventListener("doubleclick",pause);
-
-
-function pause(){
+    audio.pause();
     console.log("paused");
 }
+
+//search 기능
+var input = document.getElementById("search");
+
+input.addEventListener("keyup", function (event) {
+  if (window.event.keyCode === 13) {
+    // event.preventDefault();
+    let url = "https://www.google.com/search?q="+input.value;
+    window.open(url);
+
+  }
+});
+
+
+

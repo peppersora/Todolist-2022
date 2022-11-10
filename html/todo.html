@@ -19,15 +19,19 @@
     <audio id="audio">
       <source id="audioSource" src="C:\Users\user\Documents\GitHub\Todolist-2022\html\[Playlist] 내가 사랑한 요시마타 료의 음악.mp3"type='audio/mp3'/>   
     </audio>
-    <button onclick="musicPlay()">MUSIC</button>
+    <span id="click">
+      <i class="fas fa-music fa-lg"></i>
+    </span>
+  
     <div class="header_title">
       <h2 class="header_clock">
         00:00:00
       </h2>
       <div class="search">
-      <input type="text" 
-        
-      placeholder="search"/>
+      <input type="search" 
+      id="search"
+      placeholder="search"  />
+      
     </div>
     </div>
   </div>
@@ -69,7 +73,7 @@
   <script src="../js/background.js"></script>
   <script src="../js/todo.js"></script>
   <script src="../js/weather.js"></script>
-
+  <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
