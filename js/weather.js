@@ -32,10 +32,10 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 // bgm 넣기
 
 let audio = document.querySelector("#audio");
-let button = document.querySelector("#click");
+let button = document.querySelector("#music");
 function musicPlay(){
     console.log("Clicked");
-    // Element.style.color="red";
+    button.style.color="red";
     audio.loop=true;
     audio.play();
 
@@ -45,7 +45,7 @@ button.addEventListener("click",musicPlay);
 button.addEventListener("dblclick",musicPause);
 
 function musicPause(){
-
+  button.style.color="black";
     audio.pause();
     console.log("paused");
 }

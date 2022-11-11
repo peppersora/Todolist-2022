@@ -1,7 +1,11 @@
-
-
-
-
+body{
+    background-image:url("file:///C:/Users/user/Downloads/5.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Fragment Mono', monospace;
+    
+ 
+}
 .header{
     display: flex;
     flex-direction: row;
@@ -17,33 +21,48 @@
 .header_title{
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-content:space-between;
     align-items: center;
+    margin-right: 150px;
 }
+
+.header_date{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    margin-left: 500px;
+}
+
 .header_clock{
     display: flex;
+    flex-basis: auto;
+    flex-direction: column;
     font-size: x-large;
     font-weight: 600;
-    /* justify-items: center; */
-    margin-left: 550px;
+  
+    margin-left: 500px;
    
 }
 
+
+
+
 .search{
     display: flex;
+    
   
 }
 
 
 .search input{
-   border-bottom: 2px solid black;
-  border-top:  none;
-  border-left: none;
-  border-right: none;
+ border-radius: none;
     justify-items:center;
     align-self: flex-end;
-    margin-left: 550px;
-    margin-top: 40px;
+    margin-left: 500px;
+    margin-top: 20px;
+    border-radius:none;
+    box-shadow:30px 30px 30px 30px #717A97;
+    
 }
 
 
@@ -52,41 +71,69 @@
     
 }
 
-
-
-
 .quote{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: medium;
-    margin-top: 70px;
+    justify-items: center;
+    width: 90%;
+    height: 100px;
+    flex-basis: auto;
+    margin-right: 350px;
+
     
 }
+.middle{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    flex-wrap: nowrap;
+    
+}
+
+
+
+.BookMark{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    margin-right: 300px;
+    margin-left: 50px;
+    width: 10%;
+    height: 100px;
+   flex-basis: auto;
+   color: #6A7593;
+   
+  
+
+}
 .quote :last-child{
-    margin-top: 20px;
+    margin-top: 10px;
+    
 }
 
 .footer{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-    margin: 50px 100px;
+    margin: 10px 100px;
 }
 
 #target{
   
     height: 450px;
     width: 450px;
-    border-radius: none;
+    border-radius:50%;
+    box-shadow:30px 30px 30px 30px #717A97;
+    filter: blur(2px);   
 }
-
 
 
 
 .todo-form_class{
     position: relative;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;

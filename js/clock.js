@@ -21,7 +21,7 @@ interval: 매번 일어나야하는 무언가
 
  //현재시간 시계만들기 => 매순간 new date object를 만들고 있다..!
 const clock=document.querySelector(".header_clock");
-
+console.log(clock);
 function getClock(){
     const date = new Date();
     const hours =String(date.getHours()).padStart("2",0);
@@ -34,6 +34,14 @@ function getClock(){
 setInterval(getClock,1000);
 
 
+// 오늘 날짜 넣기...
+const day = document.querySelector(".header_date");
+
+const date = new Date();
+const year =date.getFullYear();
+const month = date.getMonth()+1;
+const today = date.getDate();
+day.innerText = `${year} / ${month} / ${today}`;
 
 
 

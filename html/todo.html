@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/todo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kolker+Brush&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="../css/reset.css"/> -->
   <title>TodoList</title>
+
 </head>
 
 <body>
@@ -19,11 +21,14 @@
     <audio id="audio">
       <source id="audioSource" src="C:\Users\user\Documents\GitHub\Todolist-2022\html\[Playlist] 내가 사랑한 요시마타 료의 음악.mp3"type='audio/mp3'/>   
     </audio>
-    <span id="click">
+    <span id="music">
       <i class="fas fa-music fa-lg"></i>
     </span>
   
     <div class="header_title">
+      <h2 class="header_date">
+        0000/00/00
+      </h2>
       <h2 class="header_clock">
         00:00:00
       </h2>
@@ -31,14 +36,29 @@
       <input type="search" 
       id="search"
       placeholder="search"  />
-      
-    </div>
     </div>
   </div>
-  <div class="quote">
-    <div class="quote_text"></div>
-    <div class="quote_person"></br></div>
+</div>
+<div class="middle">
+<div class="BookMark">
+  <div>
+    <i class="fa fa-bookmark"></i>
   </div>
+  <div>
+  <a href="https://nomadcoders.co/">Study</a>
+</div>
+<div>
+  <a href="https://www.naver.com/">Naver</a>
+  </div>
+  <div>
+  <a href="https://www.daum.net/">Daum</a>
+  </div>
+</div>
+<div class="quote">
+  <div class="quote_text"></div>
+  <div class="quote_person"></br></div>
+  </div>
+</div>
   <div class="footer">
     <div class="view">
       <img src="" id="target" />
