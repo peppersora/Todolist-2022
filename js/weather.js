@@ -33,23 +33,23 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 
 let audio = document.querySelector("#audio");
 let button = document.querySelector("#music");
-function musicPlay(){
-    console.log("Clicked");
-    button.style.color="red";
-    audio.loop=true;
-    audio.play();
 
+
+
+function musicPlay(){
+  audio.loop=true;
+  button.style.color="red";
+  audio.play();
 }
 
 button.addEventListener("click",musicPlay);
-button.addEventListener("dblclick",musicPause);
+button.addEventListener("dbclick",musicPause);
 
 function musicPause(){
+  console.log("clicked");
   button.style.color="black";
-    audio.pause();
-    console.log("paused");
+  audio.pause();
 }
-
 //search 기능
 var input = document.getElementById("search");
 
