@@ -1,5 +1,5 @@
 body{
-    background-image:url("file:///C:/Users/user/Downloads/5.jpg") ;
+    background-image:url("../img/5.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Fragment Mono', monospace;
