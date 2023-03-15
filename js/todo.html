@@ -1,40 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/todo.css"/>
-    
-    <title>apps</title>
-</head>
-<body>
-  <h2 id="clock">00:00:00</h2>
-  <form id="login-form" class="hidden">
-   <input required
-   type="text" maxlength="15" 
-   placeholder="what is your name?"/>
-   
-  <input type="submit" value="Log In"/>
-</form>
-<h1 id="greeting" class="hidden"></h1>
-<form id="todo-form">
-<input type="text" placeholder="Write a To Do and Press Enter" required/>
-</form>
-<ul id="todo-list">
-<li>
-  <span>text</span>
-  <button>X</button>
-  </li>
-</ul>
-<div id="quote">
-  <span></span>
-  <span></span>
-</div>
-<div id="weather">
-<span></span>
-<span></span>
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="todolist.css" />
+  </head>
+  <body>
+    <div class="Todo-Container">
+      <div class="row" id="Todo-Container_app">
+        <section class="col-12" id="Todo-Container_header">
+          <div class="row">
+            <div class="col-9" id="header_weather">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="col-3 text-right">
+              <span id="time"></span>
+            </div>
+          </div>
+        </section>
 
-</body>
+        <section class="col-12">
+          <div class="row">
+            <div class="col-12" id="Todo-Container_header_date">
+              <div class="row" id="Todo-Container-date">
+                <span id="main-day"></span>
+                <span id="main-month"></span>
+                <span id="main-date"></span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 id="Todo-Container_header_title">To-Do List</h2>
+          </div>
+        </section>
+
+        <section class="col-12" id="Todo_Calendar">
+          <div class="main">
+            <div class="content-right">
+              <table id="calendar" align="center">
+                <thead>
+                  <tr class="btn-wrap clearfix">
+                    <td>
+                      <label id="prev"> &#60; </label>
+                    </td>
+                    <td align="center" id="current-year-month" colspan="5"></td>
+                    <td>
+                      <label id="next"> &#62; </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="sun" align="center">S</td>
+                    <td align="center">M</td>
+                    <td align="center">T</td>
+                    <td align="center">W</td>
+                    <td align="center">T</td>
+                    <td align="center">F</td>
+                    <td class="sat" align="center">S</td>
+                  </tr>
+                </thead>
+                <tbody id="calendar-body" class="calendar-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div></div>
+        </section>
+
+        <!-- todocontainerapp끝 -->
+        <section id="Todo_List">
+          <div class="content-left">
+            <div class="todo-wrap">
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  placeholder="please write here!!"
+                  id="input-box"
+                  class="input-box"
+                />
+                <button type="button" id="input-data" class="input-data">
+                  INPUT
+                </button>
+                <div id="input-list" class="input-list"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/e42de65c53.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="geo.js"></script>
+    <script src="calendar.js"></script>
+    <script src="clock.js"></script>
+    <!-- <script src="todo.js"></script> -->
+  </body>
 </html>
