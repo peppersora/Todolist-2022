@@ -40,26 +40,28 @@ if (first.getFullYear() % 4 === 0) {
   pageYear = notLeapYear;
 }
 
+// 캘린더 보여주기기능
 function showCalendar() {
   let monthCnt = 100;
   let cnt = 1;
+  // i<6 일때, i=5까지 => 한주(row)
   for (var i = 0; i < 6; i++) {
-    var $tr = document.createElement("tr");
-    $tr.setAttribute("id", monthCnt);
+    var tr = document.createElement("tr");
+    tr.setAttribute("id", monthCnt);
+    // j<7일때, j=6까지 => 매일(day)
     for (var j = 0; j < 7; j++) {
+      var td = document.createElement("td");
       if ((i === 0 && j < first.getDay()) || cnt > pageYear[first.getMonth()]) {
-        var $td = document.createElement("td");
-        $tr.appendChild($td);
+        tr.appendChild(td);
       } else {
-        var $td = document.createElement("td");
-        $td.textContent = cnt;
-        $td.setAttribute("id", cnt);
-        $tr.appendChild($td);
+        td.textContent = cnt;
+        td.setAttribute("id", cnt);
+        tr.appendChild(td);
         cnt++;
       }
     }
     monthCnt++;
-    calendarBody.appendChild($tr);
+    calendarBody.appendChild(tr);
   }
 }
 showCalendar();
@@ -67,8 +69,8 @@ showCalendar();
 function removeCalendar() {
   let catchTr = 100;
   for (var i = 100; i < 106; i++) {
-    var $tr = document.getElementById(catchTr);
-    $tr.remove();
+    var tr = document.getElementById(catchTr);
+    tr.remove();
     catchTr++;
   }
 }
@@ -76,12 +78,12 @@ function removeCalendar() {
 // 2. 이전달과 다음달로 이동
 function prev() {
   inputBox.value = "";
-  const $divs = document.querySelectorAll("#input-list > div");
-  $divs.forEach(function (e) {
+  const divs = document.querySelectorAll("#input-list > div");
+  divs.forEach(function (e) {
     e.remove();
   });
-  const $btns = document.querySelectorAll("#input-list > button");
-  $btns.forEach(function (e1) {
+  const btns = document.querySelectorAll("#input-list > button");
+  btns.forEach(function (e1) {
     e1.remove();
   });
   if (pageFirst.getMonth() === 1) {
@@ -112,12 +114,12 @@ function prev() {
 
 function next() {
   inputBox.value = "";
-  const $divs = document.querySelectorAll("#input-list > div");
-  $divs.forEach(function (e) {
+  const divs = document.querySelectorAll("#input-list > div");
+  divs.forEach(function (e) {
     e.remove();
   });
-  const $btns = document.querySelectorAll("#input-list > button");
-  $btns.forEach(function (e1) {
+  const btns = document.querySelectorAll("#input-list > button");
+  btns.forEach(function (e1) {
     e1.remove();
   });
   if (pageFirst.getMonth() === 12) {
@@ -188,51 +190,51 @@ function reshowingList() {
   if (todoList[keyValue] === undefined) {
     inputList.textContent = "";
     todoList[keyValue] = [];
-    const $divs = document.querySelectorAll("#input-list > div");
-    $divs.forEach(function (e) {
+    const divs = document.querySelectorAll("#input-list > div");
+    divs.forEach(function (e) {
       e.remove();
     });
-    const $btns = document.querySelectorAll("#input-list > button");
-    $btns.forEach(function (e1) {
+    const btns = document.querySelectorAll("#input-list > button");
+    btns.forEach(function (e1) {
       e1.remove();
     });
   } else if (todoList[keyValue].length === 0) {
     inputList.textContent = "";
-    const $divs = document.querySelectorAll("#input-list > div");
-    $divs.forEach(function (e) {
+    const divs = document.querySelectorAll("#input-list > div");
+    divs.forEach(function (e) {
       e.remove();
     });
-    const $btns = document.querySelectorAll("#input-list > button");
-    $btns.forEach(function (e1) {
+    const btns = document.querySelectorAll("#input-list > button");
+    btns.forEach(function (e1) {
       e1.remove();
     });
   } else {
-    const $divs = document.querySelectorAll("#input-list > div");
-    $divs.forEach(function (e) {
+    const divs = document.querySelectorAll("#input-list > div");
+    divs.forEach(function (e) {
       e.remove();
     });
-    const $btns = document.querySelectorAll("#input-list > button");
-    $btns.forEach(function (e1) {
+    const btns = document.querySelectorAll("#input-list > button");
+    btns.forEach(function (e1) {
       e1.remove();
     });
-    var $div = document.createElement("div");
+    var div = document.createElement("div");
     for (var i = 0; i < todoList[keyValue].length; i++) {
-      var $div = document.createElement("div");
-      $div.textContent = "-" + todoList[keyValue][i];
-      var $btn = document.createElement("button");
-      $btn.setAttribute("type", "button");
-      $btn.setAttribute("id", "del-ata");
-      $btn.setAttribute("id", dataCnt + keyValue);
-      $btn.setAttribute("class", "del-data");
-      $btn.textContent = delText;
-      inputList.appendChild($div);
-      inputList.appendChild($btn);
-      $div.addEventListener("click", checkList);
-      $btn.addEventListener("click", deleteTodo);
+      var div = document.createElement("div");
+      div.textContent = "-" + todoList[keyValue][i];
+      var btn = document.createElement("button");
+      btn.setAttribute("type", "button");
+      btn.setAttribute("id", "del-ata");
+      btn.setAttribute("id", dataCnt + keyValue);
+      btn.setAttribute("class", "del-data");
+      btn.textContent = delText;
+      inputList.appendChild(div);
+      inputList.appendChild(btn);
+      div.addEventListener("click", checkList);
+      btn.addEventListener("click", deleteTodo);
       inputBox.value = "";
       function deleteTodo() {
-        $div.remove();
-        $btn.remove();
+        div.remove();
+        btn.remove();
       }
     }
   }
@@ -248,24 +250,24 @@ var keyValue =
 let todoList = [];
 todoList[keyValue] = [];
 function addTodoList() {
-  var $div = document.createElement("div");
-  $div.textContent = "-" + inputBox.value;
-  var $btn = document.createElement("button");
-  $btn.setAttribute("type", "button");
-  $btn.setAttribute("id", "del-ata");
-  $btn.setAttribute("id", dataCnt + keyValue);
-  $btn.setAttribute("class", "del-data");
-  $btn.textContent = delText;
-  inputList.appendChild($div);
-  inputList.appendChild($btn);
+  var div = document.createElement("div");
+  div.textContent = "-" + inputBox.value;
+  var btn = document.createElement("button");
+  btn.setAttribute("type", "button");
+  btn.setAttribute("id", "del-ata");
+  btn.setAttribute("id", dataCnt + keyValue);
+  btn.setAttribute("class", "del-data");
+  btn.textContent = delText;
+  inputList.appendChild(div);
+  inputList.appendChild(btn);
   todoList[keyValue].push(inputBox.value);
   dataCnt++;
   inputBox.value = "";
-  $div.addEventListener("click", checkList);
-  $btn.addEventListener("click", deleteTodo);
+  div.addEventListener("click", checkList);
+  btn.addEventListener("click", deleteTodo);
   function deleteTodo() {
-    $div.remove();
-    $btn.remove();
+    div.remove();
+    btn.remove();
   }
 }
 console.log(keyValue);
